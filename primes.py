@@ -1,19 +1,24 @@
+#!/usr/bin/python
+
 import time
 
-def prime(num):
-    isPrime = True
+# returns True if the given number is a prime, False otherwise
+def isPrime(num):
     for i in range(2,num):
         if  (num % i) == 0:
-            isPrime = False
             print("{} isn't prime! It can be divided by {}! Off with his head!".format(num, num // i))
-            break
-    return isPrime
+            return False
+    return True
 
-noPrimeYet = True
-while noPrimeYet:
-    num = int(input("Enter a prime number, Snivelling Little Rat-Faced Git! "))
-    noPrimeYet = prime(num)
+# prompts user for a prime number (very politely, of course!)
+def askForPrime():
+    noPrimeYet = True
+    while noPrimeYet:
+        num = int(input("Enter a prime number, Snivelling Little Rat-Faced Git! "))
+        noPrimeYet = not isPrime(num)
 
+# main, just call askForPrime()
+askForPrime()
 print("Well that was rather silly.")
 time.sleep(2)
 print("Ni!")
