@@ -5,8 +5,8 @@ import time
 # returns True if the given number is a prime, False otherwise
 def isPrime(num):
     for i in range(2,num):
-        if  (num % i) == 0:
-            print("{} isn't prime! It can be divided by {}! Off with his head!".format(num, num // i))
+        if (num % i) == 0:
+            print("{} isn't prime! It can be divided by {}! Off with your head!".format(num, num // i))
             return False
     return True
 
